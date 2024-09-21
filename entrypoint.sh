@@ -4,9 +4,6 @@
 GITHUB_TOKEN=$1
 GIPHY_API_KEY=$2
 
-GHEvent = `cat $GITHUB_EVENT_PATH`
-echo $GHEvent
-
 # Get the pull request number from the GitHub event payload
 pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 echo PR Number - $pull_request_number
